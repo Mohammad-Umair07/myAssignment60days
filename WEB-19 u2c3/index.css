@@ -1,0 +1,52 @@
+/* Fill CSS here */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+    font-family: Georgia, sans-serif;
+    margin: 10px 0px 40px 0px;
+}
+body>div{
+    display: grid;
+    grid-template-columns: 25% 71%;
+    gap: 50px;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+form{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+}
+form>input,form>select{
+    width: 94%;
+    margin: 10px 0px;
+    padding: 5px;
+}
+table{
+   height:10%;
+}
+th{
+    background-color: blue;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: aqua;
+}
+tr:nth-child(odd){
+    background-color: azure;
+}
+th,td{
+    padding: 2px 5px;
+}
+#mbl ~ input{
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    padding: 10px;
+}

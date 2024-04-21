@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            color: white;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid white;
+            height: 300px;
+            margin-top: 50px;
+        }
+        
+        .heading{
+            padding: 10px;
+            border: 1px solid white;
+        }
+        .buttons{
+            padding: 20px;
+            border: 1px solid white;
+        }
+        .display{
+            font-size: 50px;
+        }
+        .buttons>button{
+            padding: 5px 10px;
+            background-color: rgb(86, 86, 225);
+            color: black;
+            border: 0px;
+            font-size: large;
+            border-radius: 5px;
+        }
+        .buttons>button:hover{
+            cursor: pointer;
+            background-color: rgb(150, 150, 246);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="heading"><h1>STOPWATCH</h1></div>
+         <div class="display"><h1 id="min">0m</h1><h5 id="sec">00s</h5></div>
+         <div class="buttons">
+            <button id="str">START</button>
+            <button id="pus">PAUSE</button>
+            <button id="rst">RESET</button>
+         </div>
+    </div>
+</body>
+</html>
+<script>
+   
+   let displayMin = document.querySelector("#min");
+   let displaySec = document.querySelector("#sec");
+   let sBtn = document.querySelector("#str");
+   let pBtn = document.querySelector("#pus");
+   let rst = document.querySelector("#rst");
+  
+   let second = 0;
+   let min = 0;
+
+   function startWatch(){
+    if(second==60){
+        min = min + 1;
+        second = 0;
+    }else{
+        second++;
+    }
+    displayMin.innerHTML = min+"m";
+    displaySec.innerHTML =  second+"s";
+   }  
+//    to start buttton
+   let start ;
+   sBtn.addEventListener("click",function(){
+   start =  setInterval(startWatch,1000);
+   });
+//  pause button 
+ 
+   pBtn.addEventListener("click",function(){
+    clearInterval(start);
+   })
+
+//    reset button
+   rst.addEventListener("click",function(){
+    second=0;
+    min=0;
+    clearInterval(start);
+    displayMin.innerHTML = min+"m";
+    displaySec.innerHTML =  second+"0"+"s";
+   })
+    
+</script>
