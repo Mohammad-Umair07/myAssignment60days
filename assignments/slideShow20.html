@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        button:hover{
+            cursor: pointer;
+            border: 1px dotted;
+        }
+        button{
+            border: 0px;
+            padding: 5px 10px;
+            background-color: aqua;
+            color: black;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        #next{
+            padding: 5px 28px;
+        }
+        .container{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .container>div:nth-child(1){
+            padding: 10px;
+        }
+        .container>div:nth-child(2){
+            padding: 10px;
+        }
+        .container>div:nth-child(3){
+            padding: 10px;
+        }
+        img{
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Double click to star slider👇👇</h3>
+    <div class="container">
+
+        <!-- for stop and start slider----------------- -->
+        <div>
+            <button id="start-end">Start-Slider</button>
+        </div>
+
+        <!-- for image url----------------------------- -->
+        <div>
+           <img id="img">
+        </div>
+
+        <!-- for previous and next image---------------- -->
+
+        <div>
+            <button id="pre">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let arr = [
+        "https://plus.unsplash.com/premium_photo-1685026487201-bbe853364736?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1524591431555-cc7876d14adf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1554941426-e9604e34bc94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1460648304944-4883b5cfcee5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1532716377393-5ffbea548d05?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1524680319993-fe837ad4bf2d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://plus.unsplash.com/premium_photo-1674641194949-e154719cdc02?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2xpZGVyfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1554941426-a965fb2b9258?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1593016250787-edf25b355001?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1673349178635-39b654f84401?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1598704710590-dbb8d9815b32?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1456418047667-56bcd35b1a88?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1554941068-d6fc6f388f72?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://media.istockphoto.com/id/483963756/photo/burgers-time.jpg?s=612x612&w=0&k=20&c=t2WsesbTYoUxdGG_ln9vovZvbUZtnrRn9pk3MH-x6Es=",
+        "https://media.istockphoto.com/id/1004263410/photo/slide-for-kid-with-isolated-or-white-background.jpg?s=612x612&w=0&k=20&c=u7EPnNi5adwIgqEv--BWG-S4iiutRmrZHtRy6bIFKYk=",
+        "https://images.unsplash.com/photo-1619290463523-6d18f6a6b220?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1554941829-202a0b2403b8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1681488000659-cc08a1c6363e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1611348586840-ea9872d33411?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1531376653594-e9bcf0f0c65b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1673373289279-41ffe55f2f5f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1603928807771-3ffe9e26894c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1609405985534-c7455cde5d12?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1528099457806-e19e7ae792e0?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1613324942930-3f2f94f0856e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fHNsaWRlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1666034346630-6f6242927f21?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTM0fHxzbGlkZXJ8ZW58MHx8MHx8fDA%3D"
+    ]
+
+    let sAeBtn = document.querySelector("#start-end");
+    let preBtn = document.querySelector("#pre");
+    let nextBtn = document.querySelector("#next");
+    let imgDisplay = document.querySelector("#img");
+    let instruction = document.querySelector("h3");
+
+    imgDisplay.src = arr[0];
+    let i = 0;
+    function starEnd(){
+        if(i==arr.length-1){
+            i=0;
+        }else{
+            i++;
+        }
+        imgDisplay.src = arr[i];
+        // console.log(i)
+    }
+    // for star slideer function----------------------------------
+    let intervalId;
+    sAeBtn.addEventListener("dblclick",function(){
+        intervalId = setInterval(starEnd,2000);
+        sAeBtn.innerHTML = "Stop-Slider"
+        instruction.innerHTML = "Click here to stop slider👇👇"
+    });
+    //    to stop slider function -------------------------------------
+    sAeBtn.addEventListener("click",function(){
+        clearInterval(intervalId);
+        sAeBtn.innerHTML = "Start-Slider"
+        instruction.innerHTML = "Double click to star slider👇👇";
+    })
+
+    preBtn.addEventListener("click",function(){
+        clearInterval(intervalId);
+        sAeBtn.innerHTML = "Start-Slider"
+        instruction.innerHTML = "Double click to star slider👇👇";
+        if(i==0){
+            i=arr.length-1;
+        }else{
+            i--;
+        }
+        imgDisplay.src = arr[i];
+        // console.log(i)
+    })
+
+
+    nextBtn.addEventListener("click",function(){
+        clearInterval(intervalId);
+        sAeBtn.innerHTML = "Start-Slider"
+        instruction.innerHTML = "Double click to star slider👇👇";
+        if(i==arr.length-1){
+            i=0;
+        }else{
+            i++;
+        }
+        imgDisplay.src = arr[i];
+        // console.log(i)
+    })
+</script>
