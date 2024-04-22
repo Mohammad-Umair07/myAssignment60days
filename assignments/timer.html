@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            color: white;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            width: 70%;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            border: 1px solid white;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .allInputs{
+            padding: 15px;
+            border: 1px solid white;
+        }
+        .allInputs input{
+            padding: 5px 10px;
+            font-size: 15px;
+            color: black;
+        }
+        .allButtons{
+            padding: 15px;
+            border: 1px solid white;
+        }
+        .allButtons>button{
+            padding: 10px 20px;
+            color: black;
+            border: 5px solid blue;
+            border-radius: 10px;
+        }
+        .allButtons>button:hover{
+            background-color: rgb(222, 215, 215);
+            cursor: pointer;
+        }
+        .allDisplay{
+            font-size: 30px;
+            width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;margin-top: 15px;font-size: 40px;">Timer</h1>
+    <div class="container">
+
+        <div class="allInputs">
+           <form action="">
+            <input type="number" placeholder="Enter Hours" id="h" >
+            <input type="number" placeholder="Enter Minutes" id="m">
+            <input type="number" placeholder="Enter Second" id="s">
+            <input type="submit">
+           </form>
+        </div>
+
+        <div class="allDisplay" id="display">
+            <h1>0h</h1>
+            <span>:</span>
+            <h2>00m</h2>
+            <span>:</span>
+            <h3>00s</h3>
+        </div>
+
+        <div class="allButtons">
+            <button id="str">START</button>
+            <button id="pause">PAUSE</button>
+            <button id="reset">RESET</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let sBtn = document.querySelector("#str");
+    let pBtn = document.querySelector("#pause");
+    let rBtn = document.querySelector("#reset");
+    let hDisplay = document.querySelector("#display>h1");
+    let mDisplay = document.querySelector("#display>h2");
+    let sDisplay = document.querySelector("#display>h3");
+    let hInput = document.querySelector("#h");
+    let mInput = document.querySelector("#m");
+    let sInput = document.querySelector("#s");
+    let form = document.querySelector("form");
+
+    function submitHandler(e){
+        e.preventDefault();
+        let value = e.target;
+        let hour = Math.abs(value[0].value);
+        let minute =  Math.abs(value[1].value);
+        let second =  Math.abs(value[2].value);
+
+        
+        let intervalId ;
+
+
+        function startTimer(){
+            if(second==0 && minute>0){
+                minute--;
+                second = 59;
+            }else if(second==0 && minute==0 && hour>0){
+                second = 59;
+                hour--;
+                minute = 59;
+            }else if(second==0 && minute==0 && hour==0){
+                clearInterval(intervalId);
+            
+            }else {
+                second--;
+            }
+            hDisplay.innerHTML = hour+"h";
+            mDisplay.innerHTML = minute+"m";
+            sDisplay.innerHTML = second+"s";
+        }
+
+        sBtn.addEventListener("click",function(){
+            intervalId = setInterval(startTimer,500);
+        })
+
+        pBtn.addEventListener("click",function(){
+            clearInterval(intervalId);
+        })
+
+        rBtn.addEventListener("click",function(){
+            clearInterval(intervalId);
+            
+            hInput.value = "";
+            mInput.value = "";
+            sInput.value = "";
+            
+            hour = 0;
+            second = 0;
+            minute = 0;
+
+            hDisplay.innerHTML = hour+"h";
+            mDisplay.innerHTML = minute+"m";
+            sDisplay.innerHTML = second+"s";
+
+            alert("Timer reset successfully")
+        })
+    }
+
+    form.addEventListener("submit",function(event){
+        submitHandler(event);
+       
+    })
+   
+</script>
