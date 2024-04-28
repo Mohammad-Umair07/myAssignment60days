@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homePage.css">
+    <title>Employee Management System</title>
+
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">Employee Management System</h1>
+        <!-- all select are here ------------------------ -->
+        <div id="navbar">
+            <div>
+                Filter by Department
+                <select id="Department">
+                    <option value="">--Select Department--</option>
+                    <option value="hr">- hr</option>
+                    <option value="finance">- finance</option>
+                    <option value="marketing">- marketing</option>
+                    <option value="engineering">- engineering</option>
+                    <option value="operations">- operations</option>
+                </select>
+            </div>
+            <div>
+                Filter by Gender
+                <select id="Gender">
+                    <option value="">--Select gender--</option>
+                    <option value="male">- male</option>
+                    <option value="female">- female</option>
+                </select>
+            </div>
+            <div>
+                Sort by Salary
+                <select id="Salary">
+                    <option value="">--Select order--</option>
+                    <option value="asc">- low to high (asc)</option>
+                    <option value="desc">- high to low (desc)</option>
+                </select>
+            </div>
+        </div>
+        <!-- table for append the data of api-------------------------- -->
+        <table>
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- append here your data------------------------------- -->
+            </tbody>
+        </table>
+        <!-- button for next and previous -->
+        <div class="buttons">
+            <button id="pre">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="./homePage.js">
+
+</script>
