@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Product Listing Web Application---------------------------- -->
+    <div id="container">
+        
+        <div id="navbar">
+            <div><h1>Product Listing Page</h1></div>
+    
+            <div>
+                <select id="filter">
+                    <option value="">categories</option>
+                    <option value="electronics">electronics</option>
+                    <option value="jewelery">jewelery</option>
+                    <option value="men's clothing">men's clothing</option>
+                    <option value="women's clothing">women's clothing</option>
+                </select>
+    
+                <input id="search" type="search" placeholder="🔎 Search Product">
+            </div>
+    
+            <div>
+                <select id="sort">
+                    <option value="">Sort By Price</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="forShow"></div>
+        <div id="apendHere">
+            <!-- append products here -------------------------------- -->
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="index.js"></script>

@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#navbar{
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#allCountry{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+#allCountry>div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px;
+    border-radius: 10px;
+}
+#allCountry>div>p{
+    margin: 10px 0px;
+}
+#allCountry>div>h3{
+    margin-top: 10px;
+}
+#filter{
+    padding: 7px 20px;
+}
