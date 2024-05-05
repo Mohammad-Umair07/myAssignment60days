@@ -1,0 +1,37 @@
+/* navbar------------------------------------------ */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#navBar{
+    display: flex;
+    background-color: rgb(226, 226, 154);
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#navBar button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    background-color: rgb(119, 207, 231);
+    font-size: large;
+    border: 0px;
+    cursor: pointer;
+}
+/* navbar------------------------------------------ */
+form{
+    width: 30%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+form >input{
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}

@@ -1,0 +1,226 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Vijay",
+      "email": "v@gmail.com",
+      "password": "Vijay123"
+    },
+    {
+      "id": 2,
+      "name": "Rekha",
+      "email": "rekha@gmail.com",
+      "password": "1234Rekha"
+    },
+    {
+      "id": "0.6491353409463212",
+      "name": "mohammad umair",
+      "email": "u@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "0.04474226611782628",
+      "name": "mohammad ",
+      "email": "m@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "0.9065437053875536",
+      "name": "islam",
+      "email": "islam@gmail.com",
+      "password": "islam123"
+    },
+    {
+      "id": "0.686044204757398",
+      "name": "saad",
+      "email": "saad@gmail.com",
+      "password": "saad123"
+    },
+    {
+      "id": "0.6567613784546249",
+      "name": "imraam",
+      "email": "imraan@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "0.2776484751549606",
+      "name": "zoha",
+      "email": "z@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "0.8157972008471412",
+      "name": "max",
+      "email": "max@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "0.20680650571396275",
+      "name": "harry",
+      "email": "h@gmail.com",
+      "password": "harry"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "SmartPhone",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+      "price": 15000,
+      "ratings": "⭐5"
+    },
+    {
+      "id": 2,
+      "title": "TV",
+      "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+      "price": 25000,
+      "ratings": "⭐4.1"
+    },
+    {
+      "id": 3,
+      "title": "Laptop",
+      "src": "https://images-cdn.ubuy.co.in/633b75b241637808af7d4688-asus-laptop-l510-ultra-thin-laptop.jpg",
+      "price": 35000,
+      "ratings": "⭐4.5"
+    },
+    {
+      "id": 4,
+      "title": "Washing Machine",
+      "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+      "price": 20000,
+      "ratings": "⭐3.3"
+    },
+    {
+      "id": 5,
+      "title": "Microwave oven",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+      "price": 23000,
+      "ratings": "⭐3.7"
+    },
+    {
+      "id": 6,
+      "title": "Refrigerator",
+      "src": "https://m.media-amazon.com/images/I/51DWwMapWxL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 29000,
+      "ratings": "⭐4.8"
+    },
+    {
+      "id": 7,
+      "title": "Induction",
+      "src": "https://m.media-amazon.com/images/I/71gtJ+MYiKL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 5000,
+      "ratings": 2.8
+    },
+    {
+      "id": 8,
+      "title": "Rice Cooker",
+      "src": "https://m.media-amazon.com/images/I/61hd1Hs4-2L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 2600,
+      "ratings": "⭐3.1"
+    },
+    {
+      "id": 9,
+      "title": "Dry Boil",
+      "src": "https://m.media-amazon.com/images/I/61DXNDN5MFL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 700,
+      "ratings": "⭐3.4"
+    }
+  ],
+  "allUsersCart": {
+    "Vijay": [
+      {
+        "id": 1,
+        "title": "SmartPhone",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+        "price": 15000,
+        "ratings": 5
+      },
+      {
+        "id": 2,
+        "title": "TV",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": 4
+      },
+      {
+        "id": 3,
+        "title": "Laptop",
+        "src": "https://images-cdn.ubuy.co.in/633b75b241637808af7d4688-asus-laptop-l510-ultra-thin-laptop.jpg",
+        "price": 35000,
+        "ratings": "⭐4.5"
+      },
+      {
+        "id": 4,
+        "title": "Washing Machine",
+        "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+        "price": 20000,
+        "ratings": "⭐3.3"
+      },
+      {
+        "id": 6,
+        "title": "Refrigerator",
+        "src": "https://m.media-amazon.com/images/I/51DWwMapWxL._AC_UY327_FMwebp_QL65_.jpg",
+        "price": 29000,
+        "ratings": "⭐4.8"
+      }
+    ],
+    "Rekha": [
+      {
+        "id": 4,
+        "title": "Washing Machine",
+        "src": "https://whirlpoolindia.vtexassets.com/arquivos/ids/167574-1200-auto?v=638320917724870000",
+        "price": 20000,
+        "ratings": 3.2
+      },
+      {
+        "id": 5,
+        "title": "Microave oven",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyiYVs3xse5zH7hhmnIDtU6ZchYBpCOuid00Gev16kbQ&s",
+        "price": 23000,
+        "ratings": 3.8
+      }
+    ],
+    "zoha": [
+      {
+        "id": 1,
+        "title": "SmartPhone",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+        "price": 15000,
+        "ratings": "⭐5"
+      },
+      {
+        "id": 2,
+        "title": "TV",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": "⭐4.1"
+      },
+      {
+        "id": 3,
+        "title": "Laptop",
+        "src": "https://images-cdn.ubuy.co.in/633b75b241637808af7d4688-asus-laptop-l510-ultra-thin-laptop.jpg",
+        "price": 35000,
+        "ratings": "⭐4.5"
+      }
+    ],
+    "mohammad umair": [],
+    "islam": [],
+    "harry": [
+      {
+        "id": 1,
+        "title": "SmartPhone",
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkz2kjdQjM6DX7mLSYMtBrQMF_wRCFb-3cxwI5rPg1A&s",
+        "price": 15000,
+        "ratings": "⭐5"
+      },
+      {
+        "id": 2,
+        "title": "TV",
+        "src": "https://5.imimg.com/data5/SELLER/Default/2023/4/299765792/GM/GW/BT/6158633/50-inch-smart-android-led-tv-500x500.jpg",
+        "price": 25000,
+        "ratings": "⭐4.1"
+      }
+    ],
+    "saad": []
+  }
+}
